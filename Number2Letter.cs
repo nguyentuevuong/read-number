@@ -34,8 +34,8 @@ namespace ReadNumber
             if (_letter.StartsWith("lẻ"))
                 _letter = _letter.Substring(2, _letter.Length - 2).Trim();
 
-            _letter = String.Format("{0} {1}", _startwith ? "âm" : "", _letter).Trim();
-            return String.Format("{0}{1} đồng.", _letter.Substring(0, 1).ToUpper(), _letter.Substring(1, _letter.Length - 1).Trim()).Replace("lăm trăm", "năm trăm");
+            _letter = String.Format("{0} {1}", _startwith ? "âm" : "", _letter).Trim().Replace("lăm trăm", "năm trăm");
+            return String.Format("{0}{1} đồng.", _letter.Substring(0, 1).ToUpper(), _letter.Substring(1, _letter.Length - 1).Trim());
         }
 
         private static string NumUnit(int _unit)
